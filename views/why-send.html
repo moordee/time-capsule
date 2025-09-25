@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Time Capsule</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/custom.css" />
+    <link rel="icon" type="image" href="/assets/progres-clock.png" />
+  </head>
+
+  <body style="background-color: black">
+    <header>
+      <nav class="navbar navbar-expand-lg fixed-top mb-5">
+        <div class="container ms-lg-1">
+          <a class="navbar-brand" href="/index.html">Time Capsule</a>
+          <button
+            class="navbar-toggler d-lg-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html" aria-current="page"
+                  >What Happened Today?
+                  <span class="visually-hidden">(current)</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/views/why-send.html"
+                  >Why Was This Made?</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/views/why-send.html#feedback"
+                  >Send Feedback</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- place navbar here -->
+    </header>
+    <main>
+      <div class="container mb-3" id="why" style="margin-top: 100px">
+        <h2 class="fw-bold text-start text-primary my-3">Why Was This Made?</h2>
+        <p class="text-white mt-1">
+          There is not much going on in my life this year, so I thought of doing
+          something different this birthday to spice things up.
+        </p>
+      </div>
+      <hr />
+      <div class="container my-3" id="feedback">
+        <h2 class="fw-bold text-start text-primary my-3 pt-2">Send Feedback</h2>
+        <div class="card border-primary" style="background-color: black">
+          <div class="card-body">
+            <form id="feedback-form">
+              <div class="mb-3">
+                <label for="name" class="form-label text-white">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="entry.385896909"
+                  id="nameInput"
+                  placeholder="doesn't have to be real name"
+                  style="background-color: black; border-color: #ff5e00"
+                required>
+              </div>
+              <div class="mb-3">
+                <label for="feedback" class="form-label text-white"
+                  >Feedback</label
+                >
+                <textarea
+                  class="form-control"
+                  name="entry.1478353764"
+                  id="feedbackInput"
+                  rows="3"
+                  placeholder="write anything you want here, but please no stecu stecu"
+                  style="background-color: black; border-color: #ff5e00"
+                required></textarea>
+              </div>
+              <button id="submit" class="btn btn-primary">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-primary text-center text-white p-3">
+      <!-- place footer here -->
+      <p>
+        Made with&nbsp;<img
+          src="/assets/cat_big.png"
+          alt="orange cat"
+          width="32"
+        />
+        spirit by Scientia Hashina ❤️ <br />&copy; 2025
+      </p>
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+
+    <script>
+      document
+        .getElementById("feedback-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("nameInput").value;
+          const message = document.getElementById("feedbackInput").value;
+
+          // Replace with your form's action URL
+          const formURL =
+            "https://docs.google.com/forms/d/e/1FAIpQLSdN3Hu3okJGch2ZyJUSadO-1fMDLLW1uGjbcb5ZHbQosis9EA/formResponse";
+
+          // Replace entry.xxxxxxx with your field IDs
+          const data = new FormData();
+          data.append("entry.385896909", name);
+          data.append("entry.1478353764", message);
+
+          fetch(formURL, {
+            method: "POST",
+            body: data,
+            mode: "no-cors", // required to avoid CORS errors
+          })
+            .then(() => {
+              alert("Thanks for your feedback!");
+              document.getElementById("feedback-form").reset();
+            })
+            .catch((err) => {
+              alert("Something is wrong. Make sure you complete filling the form and have a good internet connection." + err);
+            });
+        });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

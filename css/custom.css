@@ -1,0 +1,264 @@
+:root {
+  /* Custom Primary Color Shades */
+  --bs-primary: #ff5e00; /* Bright Orange */
+  --bs-primary-rgb: 255, 94, 0;
+
+  /* Generate all variants of your primary color */
+  --bs-primary-100: #fff4ec; /* Very light */
+  --bs-primary-200: #ffd9bf; /* Light */
+  --bs-primary-300: #ffb182; /* Medium light */
+  --bs-primary-400: #ff8740; /* Medium */
+  --bs-primary-500: #ff5e00; /* Main (same as primary) */
+  --bs-primary-600: #e65300; /* Medium dark */
+  --bs-primary-700: #b54000; /* Dark */
+  --bs-primary-800: #802e00; /* Darker */
+  --bs-primary-900: #4a1a00; /* Very dark */
+
+  /* Update all component variants */
+  --bs-btn-primary-bg: var(--bs-primary-500);
+  --bs-btn-primary-hover-bg: var(--bs-primary-600);
+  --bs-btn-primary-active-bg: var(--bs-primary-700);
+  --bs-btn-primary-disabled-bg: var(--bs-primary-300);
+
+  /* Alert variants */
+  --bs-alert-primary-bg: var(--bs-primary-100);
+  --bs-alert-primary-border: var(--bs-primary-200);
+  --bs-alert-primary-color: var(--bs-primary-800);
+
+  /* Form variants */
+  --bs-form-focus-border: var(--bs-primary-500);
+  --bs-form-focus-shadow: rgba(var(--bs-primary-rgb), 0.25);
+
+  /* Nav & Navbar */
+  --bs-navbar-bg: var(--bs-primary-500);
+  --bs-navbar-color: #fff;
+  --bs-navbar-hover-color: var(--bs-primary-100);
+  --bs-navbar-active-color: var(--bs-primary-200);
+  --bs-nav-link-color: var(--bs-primary-700);
+  --bs-nav-link-hover-color: var(--bs-primary-900);
+  --bs-nav-link-active-color: var(--bs-primary-500);
+
+  /* Typography */
+  --bs-font-sans-serif: "Open Sans", system-ui, -apple-system, sans-serif;
+  --bs-font-monospace: "Ubuntu Mono", "Courier New", monospace;
+  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-headings-font-family: "Ubuntu", var(--bs-font-sans-serif);
+  --bs-headings-font-weight: 700;
+}
+
+/* ---------------- Buttons ---------------- */
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary-500);
+  --bs-btn-border-color: var(--bs-primary-500);
+  --bs-btn-hover-bg: var(--bs-primary-600);
+  --bs-btn-hover-border-color: var(--bs-primary-600);
+  --bs-btn-active-bg: var(--bs-primary-700);
+  --bs-btn-active-border-color: var(--bs-primary-700);
+  --bs-btn-disabled-bg: var(--bs-primary-300);
+  --bs-btn-disabled-border-color: var(--bs-primary-300);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--bs-primary-600);
+  --bs-btn-border-color: var(--bs-primary-600);
+  --bs-btn-hover-bg: var(--bs-primary-600);
+  --bs-btn-hover-border-color: var(--bs-primary-600);
+  --bs-btn-active-bg: var(--bs-primary-700);
+  --bs-btn-active-border-color: var(--bs-primary-700);
+}
+
+/* ---------------- Alerts ---------------- */
+.alert-primary {
+  --bs-alert-bg: var(--bs-primary-100);
+  --bs-alert-border-color: var(--bs-primary-200);
+  --bs-alert-color: var(--bs-primary-800);
+}
+
+/* ---------------- Forms ---------------- */
+.form-control:focus {
+  border-color: var(--bs-primary-500);
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+}
+
+.form-check-input:checked {
+  background-color: var(--bs-primary-500);
+  border-color: var(--bs-primary-500);
+}
+
+.form-range::-webkit-slider-thumb {
+  background-color: var(--bs-primary-500);
+}
+.form-range::-moz-range-thumb {
+  background-color: var(--bs-primary-500);
+}
+.form-range::-ms-thumb {
+  background-color: var(--bs-primary-500);
+}
+
+/* ---------------- Navbar ---------------- */
+.navbar {
+  background-color: var(--bs-primary-500) !important;
+}
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: #fff !important;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: var(--bs-primary-100) !important;
+}
+.navbar .nav-link.active {
+  color: var(--bs-primary-200) !important;
+}
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* ---------------- Navs / Tabs ---------------- */
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: var(--bs-primary-500);
+}
+.nav-pills .nav-link {
+  color: var(--bs-primary-700);
+}
+.nav-pills .nav-link:hover {
+  color: var(--bs-primary-900);
+}
+
+.nav-tabs .nav-link.active {
+  border-color: var(--bs-primary-500) var(--bs-primary-500) transparent;
+  color: var(--bs-primary-700);
+}
+.nav-tabs .nav-link:hover {
+  border-color: var(--bs-primary-200);
+}
+
+/* ---------------- Pagination ---------------- */
+.page-item.active .page-link {
+  background-color: var(--bs-primary-500);
+  border-color: var(--bs-primary-500);
+}
+.page-link {
+  color: var(--bs-primary-600);
+}
+.page-link:hover {
+  color: var(--bs-primary-800);
+}
+
+/* ---------------- Badges ---------------- */
+.badge.bg-primary {
+  background-color: var(--bs-primary-500) !important;
+}
+.badge-outline-primary {
+  color: var(--bs-primary-600);
+  border: 1px solid var(--bs-primary-600);
+}
+
+/* ---------------- Progress ---------------- */
+.progress-bar {
+  background-color: var(--bs-primary-500);
+}
+
+/* ---------------- List Groups ---------------- */
+.list-group-item.active {
+  background-color: var(--bs-primary-500);
+  border-color: var(--bs-primary-500);
+}
+
+/* ---------------- Dropdowns ---------------- */
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: var(--bs-primary-500);
+}
+
+/* ---------------- Accordion ---------------- */
+.accordion-button:not(.collapsed) {
+  background-color: var(--bs-primary-100);
+  color: var(--bs-primary-800);
+}
+.accordion-button:focus {
+  border-color: var(--bs-primary-500);
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+}
+
+/* ---------------- Utilities ---------------- */
+.bg-primary {
+  background-color: var(--bs-primary-500) !important;
+}
+.text-primary {
+  color: var(--bs-primary-600) !important;
+}
+.border-primary {
+  border-color: var(--bs-primary-500) !important;
+}
+
+/* ---------------- Cards ---------------- */
+.card {
+  --bs-card-bg: #fff; /* keep default white unless bg-* utility is added */
+  --bs-card-color: var(--bs-body-color);
+  --bs-card-border-color: var(--bs-primary-200); /* soft orange outline */
+}
+
+/* Card with border-primary utility */
+.card.border-primary {
+  border-color: var(--bs-primary-500) !important;
+}
+
+.card.border-primary .card-header {
+  background-color: var(--bs-primary-500);
+  color: #fff;
+}
+
+.card.border-primary .card-footer {
+  background-color: var(--bs-primary-100);
+  color: var(--bs-primary-800);
+}
+
+/* Card header/footer defaults (neutral) */
+.card-header {
+  background-color: var(--bs-primary-100);
+  color: var(--bs-primary-800);
+}
+
+.card-footer {
+  background-color: var(--bs-primary-100);
+  color: var(--bs-primary-700);
+}
+
+/* Card titles & links */
+.card-title {
+  color: var(--bs-primary-700);
+}
+
+.card-link {
+  color: var(--bs-primary-600);
+}
+.card-link:hover {
+  color: var(--bs-primary-800);
+}
+/* ---------------- Solid Orange Card ---------------- */
+.card.bg-primary {
+  background-color: var(--bs-primary-500) !important;
+  color: #fff;
+  border-color: var(--bs-primary-600);
+}
+
+.card.bg-primary .card-header,
+.card.bg-primary .card-footer {
+  background-color: var(--bs-primary-600);
+  color: #fff;
+}
+
+.card.bg-primary .card-title,
+.card.bg-primary .card-text,
+.card.bg-primary .card-link {
+  color: #fff;
+}
+
+.card.bg-primary .card-link:hover {
+  color: var(--bs-primary-200);
+}
